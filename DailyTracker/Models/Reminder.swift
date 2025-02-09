@@ -3,11 +3,11 @@ import Foundation
 
 @Model
 class Reminder {
-    var title: String
-    var isCompleted: Bool
+    var title: String = ""
+    var isCompleted: Bool = false
     var dueDate: Date?
     
-    init(title: String,
+    init(title: String = "",
          isCompleted: Bool = false,
          dueDate: Date? = nil) {
         self.title = title
@@ -15,3 +15,4 @@ class Reminder {
         self.dueDate = dueDate
     }
 }
+

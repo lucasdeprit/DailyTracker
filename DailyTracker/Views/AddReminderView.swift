@@ -45,6 +45,11 @@ struct AddReminderView: View {
     private func addReminder() {
         let newReminder = Reminder(title: title, dueDate: hasDueDate ? dueDate : nil)
         modelContext.insert(newReminder)
+        do {
+            try modelContext.save() 
+        } catch {
+            print("Error al guardar el recordatorio: \(error)")
+        }
         isPresented = false
     }
 }
